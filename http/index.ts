@@ -8,4 +8,8 @@ const api = axios.create({
 
 })
 
+// Categories
 export const fetchCategories = async () => api.get("/api/categories");
+
+// Articles
+export const fetchArticles = async (queryString: string) =>api.get(`/api/articles?${queryString}`)
