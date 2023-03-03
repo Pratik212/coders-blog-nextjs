@@ -41,7 +41,11 @@ export const getServerSideProps: GetServerSideProps = async ({query}) =>{
             category: {
                 slug: query.category
             }
-        }
+        },
+        pagination: {
+            page: query.page ? query.page : 1,
+            pageSize: 1
+        },
     }
 
     const queryString = qs.stringify(options)
