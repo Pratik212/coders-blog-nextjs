@@ -9,7 +9,7 @@ export default function App({Component, pageProps}: AppProps) {
         <div className="container mx-auto font-sans">
             <NextNProgress color="#53BD95"/>
             <Navbar/>
-            <main className="pb-32"><Component {...pageProps} /></main>Footer
+            <main className="pb-32"><Component {...pageProps} /></main>
             <Footer/>
         </div>
     </>
