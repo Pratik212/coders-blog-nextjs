@@ -31,7 +31,7 @@ const Home: NextPage<IPropTypes> = ({categories, articles, slug}) =>{
     }
 
     const handleSearch = (query: string) => {
-        router.push(`/?search=${query}`)
+        router.push(`?search=${query}`)
     }
 
     return(

@@ -29,7 +29,7 @@ const Category = ({categories, articles, slug}: IPropTypes) => {
     const  {page, pageCount} = articles.pagination;
 
     const handleSearch = (query: string) => {
-        router.push(`/category/${categorySlug}/?search=${query}`);
+        router.push(`/category/${categorySlug}?search=${query}`);
     }
 
     return (
