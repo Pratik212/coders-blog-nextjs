@@ -2,20 +2,18 @@ import React from 'react';
 import {ICategory} from "../types";
 import Link from "next/link";
 import {useRouter} from "next/router";
+import * as queryString from "querystring";
 
 interface  IPropType {
-    categories : ICategory[]
+    categories : ICategory[];
+    handleOnSearch: (query : string) => void;
 }
 
-function Tabs({categories} : IPropType) {
+function Tabs({categories, handleOnSearch} : IPropType) {
     const router = useRouter();
 
     const isActiveLink = (category : ICategory) => {
         return category.attributes.Slug === router.query.category
-    }
-
-    const handleOnSearch =  (query : string) => {
-        console.log("handling search")
     }
 
     return (

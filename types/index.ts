@@ -1,3 +1,5 @@
+import {MDXRemoteSerializeResult} from "next-mdx-remote";
+
 export interface ICategory {
       id:number;
       attributes: ICategoryAttribute;
@@ -59,7 +61,7 @@ export interface IAuthor {
 
 export interface IArticlesAttributes {
     Title: string;
-    body: string;
+    body: string | MDXRemoteSerializeResult;
     Slug: string;
     Image: IImageData;
     createdAt: string;
@@ -72,5 +74,27 @@ export interface IArticle {
     attributes : IArticlesAttributes
 }
 
-
 export type TDirection = 1 | -1;
+
+export interface IQueryOptions {
+    filters: any;
+    sort:any;
+    populate: any;
+    pagination: {
+        page: number,
+        pageSize: number
+    }
+}
+
+export  const debounce = (fn: (query: string) => void, timeout = 3000) => {
+        let timer: NodeJS.Timeout;
+
+        const debounced = (...args : any) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                fn.apply(this, args)
+            }, timeout);
+        }
+
+        return debounced;
+}

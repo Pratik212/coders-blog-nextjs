@@ -21,8 +21,6 @@ function Pagination({page, pageCount, redirectUrl = '/'} : IPropType) {
         return page <=1;
     }
 
-
-
     const handlePaginate = async (direction: TDirection) =>{
         if (direction === 1 && isNextDisabled()){
             return;
